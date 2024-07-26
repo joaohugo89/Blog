@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends 'core/base.html' %}
+
+{% block title %}Delete post | {% endblock %}
+
+{% block content %}
+    <h1>Lista de Posts para serem deletados</h1>
+    {% for p in posts %}
+        <h4>{{p.title}}</h4>
+        <a href="{% url 'confirm_delete_post' p.id %}" class="btn btn-outline-danger btn-sm">
+            Delete Post
+        </a>
+
+
+    {% endfor %}
+{% endblock %}
